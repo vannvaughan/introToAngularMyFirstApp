@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title></title>
+</head>
+
+<body ng-controller="myCtrl">
+  <div class="">
+    <input type="text" ng-model="newEntry.title" placeholder="Enter Title">
+    <input type="text" ng-model="newEntry.posts" placeholder="Enter Post">
+    <input type="text" ng-model="newEntry.entry_date" placeholder="mm/dd/yyyy">
+    <button type="button" ng-click="submitNewEntry(newEntry)">Submit</button>
+  </div>
+  <div class="">
+    <div class="" ng-repeat="entry in entries">
+      <h1>{{entry.title}}</h1>
+      <p>{{entry.posts}}</p>
+      <h6>{{entry.entry_date}}</h6>
+      <button type="button" ng-click="editEntry(entry.title)">Edit Entry</button>
+      <button type="button" ng-click="deleteEntry(entry.title)">Delete Entry</button>
+      <hr>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <script src="myCtrl.js" charset="utf-8"></script>
+</body>
+
+</html>
